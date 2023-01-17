@@ -1,0 +1,30 @@
+{
+  "name": "kinda-beer-place",
+  "version": "1.0.0",
+  "description": "A test task: a web-site allowing to query a beer menu API and see the results",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Next"
+  ],
+  "author": "Vitaliy Tikhonov",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^13.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.26",
+    "typescript": "4.9.4"
+  }
+}
