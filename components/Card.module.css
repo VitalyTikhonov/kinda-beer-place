@@ -1,0 +1,6 @@
+.beerCard {
+  width: 331px;
+  height: 339px;
+  background: url("/images/beer-glass.svg") center no-repeat;
+  background-size: contain;
+}

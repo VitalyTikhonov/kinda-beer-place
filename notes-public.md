@@ -1,14 +1,14 @@
 ## Plan
 ### Design the general main layout
 1hr DONE
+https://www.figma.com/file/sRD9OQffXTa3FoZS32cV2Y/KindaBeerPlace?node-id=0%3A1&t=fPqiUzvyvdAMhWY7-0
 ### Revise NextJS
 https://nextjs-blog-beta-eight-42.vercel.app
-1d
+1d DONE
 ### Determine and set the project framework
-2hr
-
+2hr DONE
 ### Try calling the API to see the data available
-0.5hr
+0.5hr DONE
 ### Make the main page
 4hr
 ### Make API calling
