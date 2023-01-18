@@ -1,6 +1,32 @@
 .beerCard {
   width: 331px;
   height: 339px;
-  background: url("/images/beer-glass.svg") center no-repeat;
+  background: url("/images/beer-glass.svg") left no-repeat;
   background-size: contain;
+  /* box-shadow: 0 0 0 1px green; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.data {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.description {
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

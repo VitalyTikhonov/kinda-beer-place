@@ -2,14 +2,17 @@ import Image from "next/image";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { getBeers } from "../utils";
 import styles from "./SearchBar.module.css";
+import { useAppDispatch } from "../store/hooks";
+import { setBeers } from "../store/beersSlice";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const dispatch = useAppDispatch();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     getBeers(1, 6, searchTerm)
-      .then((res) => console.log(res))
+      .then((res) => dispatch(setBeers(res ?? [])))
       .catch((error) => console.log(error));
   }
 
