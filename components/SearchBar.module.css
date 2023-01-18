@@ -14,7 +14,7 @@
 .searchField {
   min-width: 655px;
   height: 62px;
-  background: #ddd000;
+  background: #F8B500;
   border-radius: 80px;
   display: flex;
   flex-direction: row;
@@ -39,6 +39,62 @@
   color: #d3ae26;
 }
 
-.openerIcon {
+.submitButton {
+  background-color: #fccd4d;
+  border: none;
+  border-radius: 50%;
   margin-left: 33px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+}
+
+
+.submitButton:hover {
+  transform: scale(1.1);
+}
+
+.submitButton:active {
+  transform: scale(1);}
+
+.openerIcon {
+  width: 70%;
+  height: 70%;
+}
+
+@media (max-width: 1250px) {
+  .section {
+    margin: 100px 0 65px 0;
+  }
+
+  .form {
+    margin-right: 0;
+  }
+
+  .submitButton {
+    margin-left: 2px;
+  }
+}
+
+@media (max-width: 735px) {
+  .searchField {
+    min-width: unset;
+    width: unset;
+    padding: 0 20px 0 7px;
+  }
+
+  .searchFieldProper {
+    font-size: 24px;
+  }
+
+  .submitButton {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 450px) {
+  .searchFieldProper {
+    font-size: 20px;
+  }
 }

@@ -1,7 +1,6 @@
 @import url(../styles/fonts.css);
 
 .layout {
-  width: 100vw;
   max-width: 1440px;
   padding: 40px;
   background: #fccd4d;
@@ -20,4 +19,10 @@
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
+}
+
+@media (max-width: 735px) {
+  .headline1 {
+    font-size: 36px;
+  }
 }
