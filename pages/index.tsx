@@ -3,15 +3,7 @@ import Layout, { siteTitle } from "../components/layout";
 import SearchBar from "../components/SearchBar";
 import SearchResults from "../components/SearchResults";
 
-export default function Home({
-  allPostsData,
-}: {
-  allPostsData: {
-    date: string;
-    title: string;
-    id: string;
-  }[];
-}) {
+export default function Home() {
   return (
     <Layout home>
       <Head>
