@@ -11,7 +11,7 @@ export default function SearchResults() {
   return (
     <section className={styles.section}>
       {beers.map((item) => (
-        <Card data={item} />
+        <Card data={item} key={item.id}/>
       ))}
     </section>
   );
