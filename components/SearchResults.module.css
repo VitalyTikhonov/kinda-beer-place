@@ -1,6 +1,42 @@
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, 331px);
   gap: 18px 18px;
   justify-content: center;
+}
+
+.pagination {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pagElement {
+  margin-right: 10px;
+}
+
+.pagElement:last-child {
+  margin-right: 0;
+}
+
+.pageSwitcher {
+  background-color: #f8b500;
+}
+
+.activeSwitcher {
+  transform: scale(1.3);
+}
+
+.pagEllipsis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -10,13 +10,13 @@ function primaryResponseHandler<T>(response: Response) {
   return Promise.reject(json);
 }
 
-export async function getBeers(page: number, perPage: number, searchTerm: string | null): Promise<Beer[] | undefined> {
+export async function getBeers(page: number, perPage: number | undefined, searchTerm: string | null): Promise<Beer[] | undefined> {
   try {
     let query = 'https://api.punkapi.com/v2/beers?';
     if (searchTerm) {
       query = query + 'beer_name=' + searchTerm + '&';
     }
-    query = query + `page=${page}&per_page=${perPage}`;
+    query = query + `page=${page}&per_page=${perPage ?? 50}`;
     const results = await fetch(query, {
       method: "GET",
       headers: { "Content-Type": CONTENT_TYPE },

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ChangeEvent, FormEvent, useState } from "react";
+import cn from "classnames";
 import { getBeers } from "../utils";
 import styles from "./SearchBar.module.css";
 import { useAppDispatch } from "../store/hooks";
@@ -11,7 +12,7 @@ export default function SearchBar() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    getBeers(1, 6, searchTerm)
+    getBeers(1, undefined, searchTerm)
       .then((res) => dispatch(setBeers(res ?? [])))
       .catch((error) => console.log(error));
   }
@@ -28,7 +29,7 @@ export default function SearchBar() {
             placeholder="What’s on the menu..."
           />
 
-          <button type="submit" className={styles.submitButton}>
+          <button type="submit" className={cn('roundButton', styles.submitButton)}>
             <Image
               priority
               src="/images/bottle-opener-2-svgrepo-com.svg"

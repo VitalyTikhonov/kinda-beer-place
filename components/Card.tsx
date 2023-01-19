@@ -26,6 +26,7 @@ export default function Card(props: IBeerCardProps) {
   return (
     <article className={styles.beerCard} style={style}>
       <div className={styles.data}>
+        <span>{props.data.id}</span>
         {/*
         изображение
         название
@@ -34,6 +35,7 @@ export default function Card(props: IBeerCardProps) {
         <h3 className={styles.title}>{name}</h3>
 
         <p className={styles.description}>{descriptionPrepared}</p>
+
       </div>
     </article>
   );
