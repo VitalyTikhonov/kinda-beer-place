@@ -8,7 +8,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
   return (
     <div className={styles.layout}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
         <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
           property="og:image"

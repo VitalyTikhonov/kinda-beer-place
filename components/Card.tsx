@@ -26,12 +26,6 @@ export default function Card(props: IBeerCardProps) {
   return (
     <article className={styles.beerCard} style={style}>
       <div className={styles.data}>
-        <span>{props.data.id}</span>
-        {/*
-        изображение
-        название
-        описание не более 140 символов в случае превышения добавлять троеточие
-        */}
         <h3 className={styles.title}>{name}</h3>
 
         <p className={styles.description}>{descriptionPrepared}</p>

@@ -29,16 +29,37 @@ export default function SearchBar() {
             placeholder="What’s on the menu..."
           />
 
-          <button type="submit" className={cn('roundButton', styles.submitButton)}>
-            <Image
-              priority
-              src="/images/bottle-opener-2-svgrepo-com.svg"
-              className={styles.openerIcon}
-              height={16}
-              width={16}
-              alt="Search icon"
-            />
-          </button>
+          {!searchTerm.length ? (
+            <button type="submit" className={cn("roundButton", styles.submitButton)}>
+              <Image
+                priority
+                src="/images/bottle-opener-2-svgrepo-com.svg"
+                className={styles.openerIcon}
+                height={16}
+                width={16}
+                alt="Search icon"
+                title="Search for beers"
+              />
+            </button>
+          ) : (
+            <button type="button" className={cn("roundButton", styles.submitButton)}>
+              <Image
+                priority
+                src="/images/bottle-svgrepo-com.svg"
+                className={styles.openerIcon}
+                height={16}
+                width={16}
+                alt="Search icon"
+                title="Reset search"
+                onClick={() => {
+                  setSearchTerm("");
+                  getBeers(1, undefined, null)
+                    .then((res) => dispatch(setBeers(res ?? [])))
+                    .catch((error) => console.log(error));
+                }}
+              />
+            </button>
+          )}
         </div>
       </form>
     </section>

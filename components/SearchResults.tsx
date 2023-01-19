@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import { v4 as uuidv4 } from "uuid";
-import { selectBeers } from "../store/beersSlice";
-import { useAppSelector } from "../store/hooks";
+import { selectBeers, setBeers } from "../store/beersSlice";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import Card from "./Card";
 import styles from "./SearchResults.module.css";
 import PagButton from "./PagButton";
+import { getBeers } from "../utils";
 
 const CARDS_PER_PAGE = 6;
 
 export default function SearchResults() {
   const beers = useAppSelector(selectBeers);
+  const dispatch = useAppDispatch();
   const [pageIndex, setPageIndex] = useState(1);
   const [cardsToRender, setCardsToRender] = useState<React.ReactNode>([]);
   const [pagElements, setPagElement] = useState<React.ReactNode>([]);
+
+  useEffect(() => {
+    getBeers(1, undefined, null)
+      .then((res) => dispatch(setBeers(res ?? [])))
+      .catch((error) => console.log(error));
+  }, []);
 
   useEffect(() => {
     const startIndex = (pageIndex - 1) * CARDS_PER_PAGE;
@@ -43,7 +51,12 @@ export default function SearchResults() {
         <span key={uuidv4()} className={cn("roundButton", styles.pagElement, styles.pagEllipsis)}>
           ...
         </span>,
-        <PagButton key={uuidv4()} onClick={() => setPageIndex(nPages)} pageIndex={nPages} isActive={pageIndex === nPages} />
+        <PagButton
+          key={uuidv4()}
+          onClick={() => setPageIndex(nPages)}
+          pageIndex={nPages}
+          isActive={pageIndex === nPages}
+        />
       );
     }
     setPagElement(newPagElements);
