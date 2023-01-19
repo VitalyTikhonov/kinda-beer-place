@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import Link from "next/link";
 
-export const siteTitle = "Kinda Beer Place";
+const siteTitle = "Kinda Beer Place";
 
 export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
@@ -18,6 +18,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <title>{siteTitle}</title>
       </Head>
       <header className={styles.header}>
         <h1 className={styles.headline1}>Kinda Beer Place</h1>
