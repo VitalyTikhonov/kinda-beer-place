@@ -1,10 +1,21 @@
 .beerPage {
-
+  display: flex;
+  flex-direction: row;
 }
 
 .textData {
+  margin-top: 124px;
+  margin-right: 40px;
 }
 
 .pic {
+  max-height: 87vh;
+}
 
+.abv {
+  font-style: italic;
+}
+
+.foodPairings {
+  margin-bottom: 30px;
 }

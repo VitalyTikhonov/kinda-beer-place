@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Beer } from "../types";
 import styles from "./Card.module.css";
 
@@ -6,7 +7,7 @@ interface IBeerCardProps {
 }
 
 export default function Card(props: IBeerCardProps) {
-  const { image_url, name, description } = props.data;
+  const { id, image_url, name, description } = props.data;
   let descriptionPrepared = description;
   if (description.length > 139) {
     descriptionPrepared = descriptionPrepared.slice(0, 139);
@@ -24,13 +25,14 @@ export default function Card(props: IBeerCardProps) {
   }
 
   return (
-    <article className={styles.beerCard} style={style}>
-      <div className={styles.data}>
-        <h3 className={styles.title}>{name}</h3>
+    <article className={styles.beerCardOuter}>
+      <Link href={`/${id}`} className={styles.beerCard} style={style}>
+        <div className={styles.data}>
+          <h3 className={styles.title}>{name}</h3>
 
-        <p className={styles.description}>{descriptionPrepared}</p>
-
-      </div>
+          <p className={styles.description}>{descriptionPrepared}</p>
+        </div>
+      </Link>
     </article>
   );
 }

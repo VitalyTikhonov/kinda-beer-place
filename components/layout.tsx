@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "./layout.module.css";
-import Link from "next/link";
 
 const siteTitle = "Kinda Beer Place";
 
